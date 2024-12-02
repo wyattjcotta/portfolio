@@ -46,6 +46,36 @@
             font-size: 18px;
             margin-top: 10px;
         }
+        /* Your existing CSS styles here */
+        .daily-image-section {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .daily-image {
+            width: 100%;
+            max-width: 500px;
+            margin: 20px auto;
+        }
+        .image-title {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .image-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        }
+
+      .image-frame {
+        border: 2px solid black;
+        margin: 10px;
+        padding: 10px;
+        }
+
+      .image-frame img {
+        width: 200px;
+        height: auto;
+        }
     </style>
 </head>
 <body>
@@ -67,10 +97,9 @@
     </script>
 
     <div class="header">
-        <h1>Happy Snocksmas!</h1>
-        <p>10 Years of Cards</p>
+        <h1>10 YEARS OF CHRISTMAS CARDS</h1>
         <p id="countdown"></p>
-        <a id="link" href="your_link_here">View Previous Year's Cards</a>
+        <a id="link" href="your_link_here">Explore a Decade of Stupid Cards</a>
     </div>
 
     <script>
@@ -97,5 +126,41 @@
             }
         }, 1000);
     </script>
-</body>
+
+<div class="image-gallery">
+  <div class="image-frame">
+    <img src="assets/img/2014.jpg" alt="2014 Photo">
+  </div>
+  <div class="image-frame">
+    <img src="assets/img/2015.jpg" alt="2015 Photo">
+  </div>
+  <div class="image-frame">
+    <img src="assets/img/2016.jpg" alt="2016 Photo">
+  </div>
+  <div class="image-frame">
+    <img src="assets/img/2017.jpg" alt="2017 Photo">
+  </div>
+  <div class="image-frame">
+    <img src="assets/img/2018.jpg" alt="2018 Photo">
+  </div>
+  <div class="image-frame">
+    <img src="assets/img/2019.jpg" alt="2019 Photo">
+  </div>
+  <div class="image-frame">
+    <img src="assets/img/2020.jpg" alt="2020 Photo">
+  </div>
+  <div class="image-frame">
+    <img src="assets/img/2021.jpg" alt="2021 Photo">
+  </div>
+  <div class="image-frame">
+    <img src="assets/img/2022.jpg" alt="2022 Photo">
+  </div>
+  <div class="image-frame">
+    <img src="assets/img/2023.jpg" alt="2023 Photo">
+  </div>
+  <div class="image-frame">
+    <img src="assets/img/2024.jpg" alt="2024 Photo">
+  </div>
+</div>
+  </body>
 </html>
