@@ -1,0 +1,20 @@
+.countdown-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.countdown-item {
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+p {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+span {
+    font-size: 16px;
+}
