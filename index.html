@@ -46,75 +46,49 @@
           font-size: 18px;
           margin-top: 10px;
       }
-      /* Your existing CSS styles here */
-      .daily-image-section {
-          text-align: center;
-          margin-top: 20px;
-      }
-      .daily-image {
+
+
+      /* Lightbox */
+      .carousel {
+          position: relative;
           width: 100%;
-          max-width: 500px;
-          margin: 20px auto;
-      }
-      .image-title {
-          font-weight: bold;
-          font-size: 18px;
-      }
-      .image-gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+          height: 300px;
+          overflow: hidden;
       }
 
-    .image-frame {
-      border: 2px solid black;
-      margin: 10px;
-      padding: 10px;
+      .carousel-inner {
+          display: flex;
+          transition: transform 0.5s  
+      ease-in-out;
       }
 
-    .image-frame img {
-      width: 200px;
-      height: auto;
-      }
-    .image-gallery {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+      .carousel-inner img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;  
+
       }
 
-      .image-gallery img {
-        width: 200px;
-        margin: 10px;
-        cursor: pointer;
+      .prev, .next {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background-color: rgba(0, 0, 0, 0.5);
+          color: white;
+          font-size: 24px;
+          padding: 10px  
+      20px;
+          border: none;
+          cursor: pointer;
       }
 
-      .lightbox {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.8);  
-
-        justify-content: center;
-        align-items: center;
+      .prev {
+          left: 0;
       }
 
-      .lightbox img {
-        max-width: 80%;
-        max-height: 80%;
+      .next {
+          right: 0;
       }
-
-      .close-btn {
-        position: absolute;
-        top:  
-        10px;
-        right: 10px;
-        font-size: 24px;
-        color: white;
-        cursor: pointer;
-      }  
     </style>
   </head>
 <body>
@@ -138,7 +112,7 @@
     <div class="header">
         <h1>10 YEARS OF CHRISTMAS CARDS</h1>
         <p id="countdown"></p>
-        <a id="link" href="#gallery">Explore a Decade of Stupid Cards</a>
+        <a id="link" href="#gallery">Explore the last decade of my cards</a>
     </div>
 
     <script>
@@ -166,90 +140,55 @@
         }, 1000);
     </script>
 
-    <div id="gallery"></div>
-    <div class="image-gallery">
-      <div class="image-frame">
-        <img src="assets/img/2014.jpg" alt="2014 Photo">
-        <p>2014</p>
-      </div>
-      <div class="image-frame">
-        <img src="assets/img/2015.jpg" alt="2015 Photo">
-        <p>2015</p>
-      </div>
-      <div class="image-frame">
-        <img src="assets/img/2016.jpg" alt="2016 Photo">
-        <p>2016</p>
-      </div>
-      <div class="image-frame">
-        <img src="assets/img/2017.jpg" alt="2017 Photo">
-        <p>2017</p>
-      </div>
-      <div class="image-frame">
-        <img src="assets/img/2018.jpg" alt="2018 Photo">
-        <p>2018</p>
-      </div>
-      <div class="image-frame">
-        <img src="assets/img/2019.jpg" alt="2019 Photo">
-        <p>2019</p>
-      </div>
-      <div class="image-frame">
-        <img src="assets/img/2020.jpg" alt="2020 Photo">
-        <p>2020</p>
-      </div>
-      <div class="image-frame">
-        <img src="assets/img/2021.jpg" alt="2021 Photo">
-        <p>2021</p>
-      </div>
-      <div class="image-frame">
-        <img src="assets/img/2022.jpg" alt="2022 Photo">
-        <p>2022</p>
-      </div>
-      <div class="image-frame">
-        <img src="assets/img/2023.jpg" alt="2023 Photo">
-        <p>2023</p>
-      </div>
-      <div class="image-frame">
-        <img src="assets/img/2024.jpg" alt="2024 Photo">
-        <p>2024</p>
-      </div>
-    </div>
-    <div class="image-gallery">
-      <img src="assets/img/2014.jpg" alt="2014" onclick="openLightbox(0)">
-      <img src="assets/img/2015.jpg" alt="2015 (lost)" onclick="openLightbox(1)">
-      <img src="assets/img/2016.jpg" alt="2016 (lost)" onclick="openLightbox(2)">
-      <img src="assets/img/2017.jpg" alt="2017" onclick="openLightbox(3)">
-      <img src="assets/img/2018.jpg" alt="2018" onclick="openLightbox(4)">
-      <img src="assets/img/2019.jpg" alt="2019" onclick="openLightbox(5)">
-      <img src="assets/img/2020.jpg" alt="2020" onclick="openLightbox(6)">
-      <img src="assets/img/2021.jpg" alt="2021" onclick="openLightbox(7)">
-      <img src="assets/img/2022.jpg" alt="2022" onclick="openLightbox(8)">
-      <img src="assets/img/2023.jpg" alt="2023" onclick="openLightbox(9)">
-      <img src="assets/img/2024.jpg" alt="2024?" onclick="openLightbox(10)">
-      </div>
 
-    <div id="lightbox" class="lightbox">
-      <span class="close-btn" onclick="closeLightbox()">×</span>
-      <img id="lightbox-img" src="">
-      <div id="caption"></div>
+
+
+/* CAROUSEL */
+    <div class="carousel">
+      <div class="carousel-inner">
+          <img src="assets/img/2014.jpg" alt="2014">
+          <img src="assets/img/2015.jpg" alt="2015">
+          <img src="assets/img/2016.jpg" alt="2016">
+          <img src="assets/img/2017.jpg" alt="2017">
+          <img src="assets/img/2018.jpg" alt="2018">
+          <img src="assets/img/2019.jpg" alt="2019">
+          <img src="assets/img/2020.jpg" alt="2020">
+          <img src="assets/img/2021.jpg" alt="2021">
+          <img src="assets/img/2022.jpg" alt="2022">
+          <img src="assets/img/2023.jpg" alt="2023">
+          <img src="assets/img/2024.jpg" alt="2024">
+      </div>
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
     </div>
 
     <script>
-      function openLightbox(index) {
-        const images = document.querySelectorAll('.image-gallery img');
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        const  
-    caption = document.getElementById('caption');
+      const carouselInner = document.querySelector('.carousel-inner');
+      const prevBtn = document.querySelector('.prev');
+      const nextBtn = document.querySelector('.next');  
 
-        lightboxImg.src = images[index].src;
-        caption.textContent = images[index].alt;
-        lightbox.style.display = 'block';
-      }
+      const images = carouselInner.children;
+      let currentIndex = 0;
 
-      function closeLightbox() {
-        const lightbox = document.getElementById('lightbox');
-        lightbox.style.display = 'none';
-      }
+      const slide = () => {
+          carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+      };
+
+      const prevSlide = () => {
+          currentIndex = (currentIndex - 1 + images.length) % images.length;
+          slide();
+      };
+
+      const nextSlide = () => {
+          currentIndex = (currentIndex + 1) % images.length;
+          slide();
+      };
+
+      prevBtn.addEventListener('click', prevSlide);
+      nextBtn.addEventListener('click', nextSlide);
+
+      // Initial slide
+      slide();
     </script>
   </body>
 </html>
