@@ -111,7 +111,7 @@
     .image-gallery {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
+      
      }
       
       
@@ -124,7 +124,7 @@
 
     .lightbox {
         display: none;
-        text-align: center;
+        
         position: center;
         top: 0;
         left: 0;
@@ -153,7 +153,60 @@
         font-size: 24px;
         color: white;
         cursor: pointer;
-      }  
+      } 
+      .image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+      }
+
+      .image-gallery figure {
+        margin: 10px;
+        cursor: pointer;
+      }
+
+      .image-gallery img {
+        width: 100%;
+        height: auto;
+      }
+
+      /* Lightbox Styles */
+      .lightbox {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 9999;
+      }
+
+      .lightbox-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        padding: 20px;
+        max-width: 90%;
+        max-height: 90%;
+        overflow: auto; /* Enable scrolling on mobile */
+      }
+
+      .lightbox-content img {
+        width: 100%;
+        height: auto;
+      }
+
+      .lightbox-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        font-size: 24px;
+        color: #fff;
+      } 
   </style>
 </head>
 <body>
