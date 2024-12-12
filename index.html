@@ -182,7 +182,7 @@
         z-index: 9999;
       }
 
-      .lightbox-content {
+            .lightbox-content {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -191,7 +191,10 @@
         padding: 20px;
         max-width: 90%;
         max-height: 90%;
-        overflow: auto; /* Enable scrolling on mobile */
+        overflow-y: auto; /* Enable vertical scrolling */
+        display: flex; /* Center the image horizontally */
+        justify-content: center;
+        align-items: center;
       }
 
       .lightbox-content img {
